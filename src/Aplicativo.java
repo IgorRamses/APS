@@ -17,7 +17,7 @@ public class Aplicativo {
             System.out.print("Escolha uma opção: ");
 
             int opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpar a quebra de linha
+            scanner.nextLine(); 
 
             switch (opcao) {
                 case 1:
@@ -29,10 +29,10 @@ public class Aplicativo {
                     break;
                 case 2:
                     System.out.print("Digite o ID do titular da conta: ");
-                    idTitular = scanner.nextLine(); // Atribua o valor aqui
+                    idTitular = scanner.nextLine();
                     Titular titular = banco.encontrarTitularPorId(idTitular);
                     if (titular != null) {
-                        banco.adicionarConta(idTitular); // Passe o ID do titular
+                        banco.adicionarConta(idTitular);
                         System.out.println("Conta cadastrada com sucesso.");
                     } else {
                         System.out.println("Titular não encontrado.");
@@ -43,7 +43,6 @@ public class Aplicativo {
                     String idConta = scanner.nextLine();
                     Conta conta = banco.encontrarContaPorId(idConta);
                     if (conta != null) {
-                        // Submenu de operações em conta
                         while (true) {
                             System.out.println("Operações em Conta:");
                             System.out.println("1. Sacar");
@@ -54,7 +53,7 @@ public class Aplicativo {
                             System.out.print("Escolha uma operação: ");
 
                             int operacaoConta = scanner.nextInt();
-                            scanner.nextLine(); // Limpar a quebra de linha
+                            scanner.nextLine(); 
 
                             switch (operacaoConta) {
                                 case 1:
@@ -92,14 +91,14 @@ public class Aplicativo {
                                     System.out.println("Saldo da Conta: " + conta.getSaldo());
                                     break;
                                 case 5:
-                                    // Voltar ao Menu Principal
+                                   
                                     break;
                                 default:
                                     System.out.println("Opção inválida. Tente novamente.");
                             }
 
                             if (operacaoConta == 5) {
-                                break; // Sair do submenu de operações em conta
+                                break;
                             }
                         }
                     } else {
